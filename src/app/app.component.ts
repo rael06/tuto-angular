@@ -5,4 +5,7 @@ import { OnInit } from "@angular/core";
     selector: 'pokemon-app',
     templateUrl: './app/app.component.html'
 })
-export class AppComponent implements OnInit { }
+
+export class AppComponent implements OnInit {
+    ngOnInit(): void { }
+}

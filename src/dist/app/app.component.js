@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
+    AppComponent.prototype.ngOnInit = function () { };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'pokemon-app',
