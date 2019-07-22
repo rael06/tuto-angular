@@ -10,11 +10,14 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var http_1 = require("@angular/common/http");
 var app_routing_module_1 = require("./app-routing.module");
-var pokemon_module_1 = require("./pokemons/pokemon.module");
+var pokemons_module_1 = require("./pokemons/pokemons.module");
 var in_memory_data_service_1 = require("./in-memory-data.service");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var app_component_1 = require("./app.component");
-var page_not_ound_component_1 = require("./page-not-ound.component");
+var page_not_found_component_1 = require("./page-not-found.component");
+var login_component_1 = require("./login.component");
+var login_routing_module_1 = require("./login-routing.module");
+var forms_1 = require("@angular/forms");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -22,12 +25,18 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                pokemon_module_1.PokemonsModule,
+                pokemons_module_1.PokemonsModule,
                 app_routing_module_1.AppRoutingModule,
                 http_1.HttpClientModule,
-                angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { dataEncapsulation: false })
+                angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { dataEncapsulation: false }),
+                login_routing_module_1.LoginRoutingModule,
+                forms_1.FormsModule
             ],
-            declarations: [app_component_1.AppComponent, page_not_ound_component_1.PageNotOundComponent],
+            declarations: [
+                app_component_1.AppComponent,
+                page_not_found_component_1.PageNotFoundComponent,
+                login_component_1.LoginComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
