@@ -8,16 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
+var http_1 = require("@angular/common/http");
 var app_routing_module_1 = require("./app-routing.module");
-var page_not_ound_component_1 = require("./page-not-ound.component");
 var pokemon_module_1 = require("./pokemons/pokemon.module");
+var in_memory_data_service_1 = require("./in-memory-data.service");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
+var app_component_1 = require("./app.component");
+var page_not_ound_component_1 = require("./page-not-ound.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, pokemon_module_1.PokemonsModule, app_routing_module_1.AppRoutingModule],
+            imports: [
+                platform_browser_1.BrowserModule,
+                pokemon_module_1.PokemonsModule,
+                app_routing_module_1.AppRoutingModule,
+                http_1.HttpClientModule,
+                angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { dataEncapsulation: false })
+            ],
             declarations: [app_component_1.AppComponent, page_not_ound_component_1.PageNotOundComponent],
             bootstrap: [app_component_1.AppComponent]
         })
