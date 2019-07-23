@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from './auth.service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
 
 @Component({
     selector: 'login',
@@ -23,8 +23,7 @@ import {AuthService} from './auth.service';
                         </div>
                     </form>
                     <div class="card-action center">
-                        <a (click)="login()" class="waves-effect waves-light btn" *ngIf="!authService.isLoggedIn">Se
-                            connecter</a>
+                        <a (click)="login()" class="waves-effect waves-light btn"  *ngIf="!authService.isLoggedIn">Se connecter</a>
                         <a (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</a>
                     </div>
                 </div>
@@ -37,8 +36,7 @@ export class LoginComponent {
     private name: string;
     private password: string;
 
-    constructor(private authService: AuthService, private router: Router) {
-    }
+    constructor(private authService: AuthService, private router: Router) { }
 
     // Informe l'utilisateur sur son authentfication.
     setMessage() {
@@ -54,7 +52,7 @@ export class LoginComponent {
             if (this.authService.isLoggedIn) {
                 // Récupère l'URL de redirection depuis le service d'authentification
                 // Si aucune redirection n'a été définis, redirige l'utilisateur vers la liste des pokemons.
-                let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/pokemon/list';
+                let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/pokemon/all';
                 // Redirige l'utilisateur
                 this.router.navigate([redirect]);
             } else {

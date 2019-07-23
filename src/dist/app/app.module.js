@@ -25,12 +25,12 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                pokemons_module_1.PokemonsModule,
-                app_routing_module_1.AppRoutingModule,
                 http_1.HttpClientModule,
+                forms_1.FormsModule,
                 angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { dataEncapsulation: false }),
+                pokemons_module_1.PokemonsModule,
                 login_routing_module_1.LoginRoutingModule,
-                forms_1.FormsModule
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,
